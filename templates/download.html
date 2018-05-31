@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	Download Your File
+{% endblock %}
+
+{% block body %}
+	<div class="col-sm-12">
+		<a href="/home/shubham/Desktop/projects/Rank_calculator/output.csv" style="text-decoration: none;">Download</a>
+		<a href="{{url_for('index')}}" style="text-decoration: none;"><h3>Go Back</h3></a>
+	</div>
+{% endblock %}

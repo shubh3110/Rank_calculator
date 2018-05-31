@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	Fetch Your Branch RankList
+{% endblock %}
+
+{% block body %}
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-sm-12">
+				<form class="form-horizontal" action="{{url_for('result')}}" method="post"> 
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input class="form-control" type="text" list="branch" name="b_name" placeholder="Enter your branch name">
+							<datalist id="branch">
+							    <option value="UGCE">
+							    <option value="UGCS">
+							    <option value="UGME">
+							    <option value="UGMM">
+							    <option value="UGEC">
+							    <option value="UGEE">
+							    <option value="UGPI">
+							    <option value="PGCACA">
+							</datalist>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input class="form-control" type="text" list="years" name="b_year" placeholder="Enter your batch year">
+							<datalist id="years">
+							    <option value="2014">
+							    <option value="2015">
+							    <option value="2016">
+							    <option value="2017">
+							    <option value="2018">
+							</datalist>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input class="form-control" type="text" list="semester" name="b_semester" placeholder="Enter your semester">
+							<datalist id="semester">
+							    <option value="1">
+							    <option value="2">
+							    <option value="3">
+							    <option value="4">
+							    <option value="5">
+							    <option value="6">
+							    <option value="7">
+							    <option value="8">
+							</datalist>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input class="form-control" type="text" name="b_strength" placeholder="Enter your branch strength">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<button class="btn btn-success btn-block">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-2"></div>
+{% endblock %}
