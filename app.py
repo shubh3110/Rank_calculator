@@ -9,6 +9,7 @@ import bs4
 import csv
 import pandas as pd
 import numpy as np
+import urllib
 
 def is_alert_present(s):
     try: s.switch_to_alert().accept()
@@ -21,6 +22,7 @@ app=Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
+
 
 @app.route('/result',methods=['GET','POST'])
 def result():
@@ -82,6 +84,15 @@ def result():
         df.to_csv('output.csv', encoding='utf-8', index=False)
         return render_template("download.html")
 
-    
+
+@app.route('/download')
+def download():
+    url = 'output.csv'
+    response = urllib.urlopen(url)
+    cr = csv.reader(response)
+    for row in cr:
+        print row
+
+
 if __name__=='__main__':
     app.run(debug=True)
